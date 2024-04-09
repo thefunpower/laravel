@@ -1,10 +1,11 @@
 <?php 
 
-define('PATH', realpath(__DIR__ . '/../../') . '/');
+define('PATH', realpath(__DIR__ . '/../../../') . '/');
 define('WWW_PATH', PATH.'public/'); 
 
 function init_laravel(){
-	global $config;
+    error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_WARNING);
+    global $config;
     global $redis_lock; 
     //锁前缀
     global $lock_key;
@@ -14,14 +15,14 @@ function init_laravel(){
         'port'=>env('REDIS_PASSWORD'),
         'auth'=>env('REDIS_PORT'),
     ];
-	$medoo_db_config = [
+    $medoo_db_config = [
         'db_host'=>env("DB_HOST"),
         'db_port'=>env("DB_PORT"),
         'db_name'=>env("DB_DATABASE"),
         'db_user'=>env("DB_USERNAME"),
         'db_pwd'=>env("DB_PASSWORD"),
     ];
-	include PATH . '/vendor/thefunpower/db_medoo/boot.php'; 
+    include PATH . '/vendor/thefunpower/db_medoo/boot.php'; 
 }
 
 /**
