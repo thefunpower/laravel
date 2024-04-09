@@ -1,0 +1,24 @@
+{
+    "name": "thefunpower/laravel",
+    "type": "library",
+    "description": "laravel",
+    "keywords": ["php"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "kenken"
+        }
+    ],
+    "require": {  
+        "spatie/laravel-route-attributes": "^1.22",
+        "thefunpower/db_medoo": "^2",
+        "thefunpower/helper": "^2",
+        "thefunpower/think": "*",
+        "thefunpower/vue": "^2"
+    },
+    "autoload": { 
+        "files": [ 
+            "./helper.php"
+        ]
+    }
+}
